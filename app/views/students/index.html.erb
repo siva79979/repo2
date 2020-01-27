@@ -1,0 +1,21 @@
+<div class = "table-responsive">
+<table class='table table-striped'>
+<%= link_to "new", new_student_path, :class => 'btn btn-primary' %>
+
+<tr>
+<th>Name</th>
+<th>Address</th>
+<th>Mobile</th>
+</tr>
+<% @student.each do |student| %>
+ <tr>
+<td> <%=  student.name %> </td>
+<td> <%=  student.address %> </td>
+<td> <%=  student.mobile %> </td>
+<td> <%= link_to "View", student_books_path(student) %>
+<%= link_to "edit", edit_student_path(student), :class => 'edit_button' %></td>
+
+</tr>
+<% end %>
+</table>
+</div>
